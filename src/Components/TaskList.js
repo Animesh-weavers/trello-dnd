@@ -20,7 +20,7 @@ class TaskList extends React.Component {
         console.log("DragEnd")
         evt.currentTarget.classList.remove("dragged");
     };
-    onDragEnter = (evt) => {                       //2nd step
+    onDragEnter = (evt) => {                        //2nd step
         console.log("DragEnter")
         evt.preventDefault();
         let element = evt.currentTarget;
