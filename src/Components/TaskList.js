@@ -20,7 +20,7 @@ class TaskList extends React.Component {
         console.log("DragEnd")
         evt.currentTarget.classList.remove("dragged");
     };
-    onDragEnter = (evt) => {                         //2nd step
+    onDragEnter = (evt) => {                       //2nd step
         console.log("DragEnter")
         evt.preventDefault();
         let element = evt.currentTarget;
@@ -58,8 +58,10 @@ class TaskList extends React.Component {
     };
     render() {
         const { tasks } = this.state;
-        let pending = tasks.filter((t) => !t.done);
-        let done = tasks.filter((t) => t.done);
+        const pending = tasks.filter((task) => !task.done);
+        const done = tasks.filter((task) => task.done);
+        console.log(pending);
+        console.log(done)
         return (
             <div className="container">
                 <div
