@@ -1,10 +1,11 @@
 import React from 'react'
-
+import TaskList from './Components/TaskList'
+import { TASKS } from './Constants'
 
 const App = () => {
   return (
     <>
-      <h1>Trello DND</h1>
+      <TaskList tasks={TASKS} />
     </>
   )
 }

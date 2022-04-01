@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-box {
+    margin-left: 6rem;
+    background-color: antiquewhite;
+    width: 30%;
+    height: 80%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.task {
+    background-color: white;
+    margin: 1rem;
+    padding: 2rem;
+}
