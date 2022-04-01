@@ -9,7 +9,7 @@ class TaskList extends React.Component {
             tasks
         });
     }
-    onDragStart = (evt) => {
+    onDragStart = (evt) => {                         //1st step  called only first time
         console.log("DragStart")
         let element = evt.currentTarget;
         element.classList.add("dragged");
@@ -20,7 +20,7 @@ class TaskList extends React.Component {
         console.log("DragEnd")
         evt.currentTarget.classList.remove("dragged");
     };
-    onDragEnter = (evt) => {
+    onDragEnter = (evt) => {                         //2nd step
         console.log("DragEnter")
         evt.preventDefault();
         let element = evt.currentTarget;
@@ -84,7 +84,7 @@ class TaskList extends React.Component {
                         </div>
                     ))}
                 </div>
-                
+
                 <div
                     className="done small-box"
                     onDragLeave={(e) => this.onDragLeave(e)}
