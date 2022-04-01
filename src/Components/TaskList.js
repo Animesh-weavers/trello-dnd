@@ -10,25 +10,25 @@ class TaskList extends React.Component {
         });
     }
     onDragStart = (evt) => {                         //1st step  called only first time
-        console.log("DragStart")
+        // console.log("DragStart")
         let element = evt.currentTarget;
         element.classList.add("dragged");
         evt.dataTransfer.setData("text/plain", evt.currentTarget.id);
         evt.dataTransfer.effectAllowed = "move";
     };
     onDragEnd = (evt) => {
-        console.log("DragEnd")
+        // console.log("DragEnd")
         evt.currentTarget.classList.remove("dragged");
     };
     onDragEnter = (evt) => {                        //2nd step
-        console.log("DragEnter")
+        // console.log("DragEnter")
         evt.preventDefault();
         let element = evt.currentTarget;
         element.classList.add("dragged-over");
         evt.dataTransfer.dropEffect = "move";
     };
     onDragLeave = (evt) => {
-        console.log("DragLeave");
+        // console.log("DragLeave");
         let currentTarget = evt.currentTarget;
         let newTarget = evt.relatedTarget;
         if (newTarget.parentNode === currentTarget || newTarget === currentTarget)
@@ -38,17 +38,18 @@ class TaskList extends React.Component {
         element.classList.remove("dragged-over");
     };
     onDragOver = (evt) => {
-        console.log("DragOver");
+        // console.log("DragOver");
         evt.preventDefault();
         evt.dataTransfer.dropEffect = "move";
     };
     onDrop = (evt, value) => {
-        console.log("Drop");
+        // console.log("Drop");
         evt.preventDefault();
         evt.currentTarget.classList.remove("dragged-over");
         let data = evt.dataTransfer.getData("text/plain");
         let tasks = this.state.tasks;
         let updated = tasks.map((task) => {
+            // console.log(task.id)
             if (task.id == data) {
                 task.done = value;
             }
@@ -60,8 +61,8 @@ class TaskList extends React.Component {
         const { tasks } = this.state;
         const pending = tasks.filter((task) => !task.done);
         const done = tasks.filter((task) => task.done);
-        console.log(pending);
-        console.log(done)
+        // console.log(pending);
+        // console.log(done)
         return (
             <div className="container">
                 <div
